@@ -1,0 +1,12 @@
+.ipynb_checkpoints
+.venv/
+pics/
+
+data/info/
+data/sound_db/
+data/sound_selected_db/
+data/info_wo_audio/
+data/pics_db
+data/pics_selected_db/
+
+__pycache__
