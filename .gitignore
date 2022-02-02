@@ -2,11 +2,21 @@
 .venv/
 pics/
 
+*~
+*.pyc
+*.npy
+.idea
+
 data/info/
 data/sound_db/
+data/sound_rt/
+data/sound_yf/
 data/sound_selected_db/
 data/info_wo_audio/
 data/pics_db
 data/pics_selected_db/
+!data/pics_db/spectrum_1259.png
+!data/pics_db/spectrum_1260.png
+
 
 __pycache__

@@ -8,7 +8,9 @@ from pymongo import MongoClient
 
 path_info = os.path.join('./data', 'info')
 path_sound = os.path.join('./data', 'sound_db')
+path_selected_sound = os.path.join('./data', 'sound_selected_db')
 path_spect = os.path.join('./data', 'pics_db')
+path_selected_spect = os.path.join('./data', 'pics_selected_db')
 
 def generate_df(threshold=100, size_limit=16_000_000):
     """[summary]
@@ -39,6 +41,30 @@ def generate_df(threshold=100, size_limit=16_000_000):
 
     return nndf
 
+def generate_new_df()-> pd.DataFrame:
+    """[summary]
+
+    should return exactly 250 records
+
+    Returns:
+        pd.DataFrame
+    """
+
+    bddf = pd.read_json(open(os.path.join('./data', 'info_wo_audio.json')), orient='index')
+    dfa = bddf[bddf['class']=='A']
+
+    mfdf = dfa['name'].value_counts()
+    mfdf120 = mfdf[mfdf > 120]
+
+    ndf = dfa[dfa['name'].isin(mfdf120.index)]
+
+    ndf.reset_index(inplace=True)
+    ndf.rename(columns={'index': 'key'}, inplace=True)
+
+    ndf['size'] = [os.stat(os.path.join(path_selected_sound, f"sound_{k}.mp3")).st_size for k in ndf['key']]
+
+    return ndf
+
 def get_mongo_access():
     myclient = MongoClient("mongodb://localhost:27017/")
     mydb = myclient["birdDB"]
@@ -53,5 +79,15 @@ def get_mp3_fname(ind):
 
 def get_spectrum_fname(ind):
     fname = os.path.join(path_spect, f'spectrum_{ind}.png')
+    assert os.path.isfile(fname), f'{fname} does not exist'
+    return fname
+
+def get_sel_mp3_fname(ind):
+    fname = os.path.join(path_selected_sound, f'sound_{ind}.mp3')
+    assert os.path.isfile(fname), f'{fname} does not exist'
+    return fname
+
+def get_sel_spectrum_fname(ind):
+    fname = os.path.join(path_selected_spect, f'spectrum_{ind}.png')
     assert os.path.isfile(fname), f'{fname} does not exist'
     return fname
