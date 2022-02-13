@@ -9,6 +9,8 @@ numpy
 scipy
 pandas
 seaborn
+kaleido
+plotly
 
 imageio
 

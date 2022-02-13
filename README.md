@@ -30,5 +30,11 @@ sudo apt update
 sudo apt install ffmpeg
 ```
 
+## pyAudioAnalysis
+```bash
+https://github.com/tyiannak/pyAudioAnalysis.git
+pip install -r ./requirements.txt
+pip install -e .
+```
 
 
