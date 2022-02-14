@@ -3,6 +3,7 @@ jupyter
 ipykernel
 
 black
+pyyaml
 
 matplotlib
 numpy

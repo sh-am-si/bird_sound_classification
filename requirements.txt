@@ -146,6 +146,8 @@ jupyterlab-pygments==0.1.2
     # via nbconvert
 jupyterlab-widgets==1.0.2
     # via ipywidgets
+kaleido==0.2.1
+    # via -r requirements.in
 keras-preprocessing==1.1.2
     # via tensorflow
 keras==2.7.0
@@ -250,6 +252,8 @@ pillow==9.0.0
     #   matplotlib
 platformdirs==2.4.1
     # via black
+plotly==5.6.0
+    # via -r requirements.in
 pooch==1.6.0
     # via librosa
 prometheus-client==0.12.0
@@ -300,6 +304,8 @@ python-dateutil==2.8.2
     #   pandas
 pytz==2021.3
     # via pandas
+pyyaml==6.0
+    # via -r requirements.in
 pyzmq==22.3.0
     # via
     #   jupyter-client
@@ -347,6 +353,7 @@ six==1.16.0
     #   grpcio
     #   html5lib
     #   keras-preprocessing
+    #   plotly
     #   python-dateutil
     #   resampy
     #   tensorflow
@@ -360,6 +367,8 @@ stack-data==0.1.4
     # via ipython
 tabulate==0.8.9
     # via -r requirements.in
+tenacity==8.0.1
+    # via plotly
 tensorboard-data-server==0.6.1
     # via tensorboard
 tensorboard-plugin-wit==1.8.1

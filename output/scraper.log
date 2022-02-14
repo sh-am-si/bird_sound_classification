@@ -1,0 +1,8 @@
+2022-02-14 04:13:55,969 - scraperLogger - ERROR - Xeno scraper initialization
+2022-02-14 05:17:07,661 - scraperLogger - INFO - Xeno scraper initialization
+2022-02-14 05:17:07,885 - scraperLogger - INFO - bird db reading has finished
+2022-02-14 05:17:20,256 - scraperLogger - INFO - df shape is (15140, 21)
+2022-02-14 05:17:20,257 - scraperLogger - INFO - df columns is Index(['_id', 'name', 'sci_name', 'id', 'filepath', 'data-id', 'page', 'row',
+       'audio', 'length', 'contributor', 'date', 'time', 'country', 'location',
+       'elev', 'type', 'note', 'bird_seen', 'playback_used', 'class'],
+      dtype='object')
