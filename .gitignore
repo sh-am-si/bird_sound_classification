@@ -7,6 +7,8 @@ pics/
 *.npy
 .idea
 
+output/scraper.log
+
 data/info/
 data/sound_db/
 data/sound_rt/
@@ -17,6 +19,8 @@ data/pics_db
 data/pics_selected_db/
 !data/pics_db/spectrum_1259.png
 !data/pics_db/spectrum_1260.png
+
+mdb/node_modules/
 
 
 __pycache__

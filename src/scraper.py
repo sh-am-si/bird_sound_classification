@@ -55,49 +55,49 @@ def read_table(table, page:int) -> List[Dict]:
                             d['length'] = td.text.strip()
                         except:
                             d['length'] = None
-                            logger.debug(f"reading page {page}, row {_row} 'length' wasn't read")
+                            logger.debug(f"reading page {page}, row {ri} 'length' wasn't read")
                     if i==3:
                         try:
                             d['contributor'] = td.find_next().text
                         except:
                             d['contributor'] = None
-                            logger.debug(f"reading page {page}, row {_row} 'contributor' wasn't read")
+                            logger.debug(f"reading page {page}, row {ri} 'contributor' wasn't read")
                     if i==4:
                         try:
                             d['date'] = td.text
                         except:
                             d['date'] = None 
-                            logger.debug(f"reading page {page}, row {_row} 'date' wasn't read")
+                            logger.debug(f"reading page {page}, row {ri} 'date' wasn't read")
                     if i==5:
                         try:
                             d['time'] = td.text
                         except:
                             d['time'] = None  
-                            logger.debug(f"reading page {page}, row {_row} 'time' wasn't read")                              
+                            logger.debug(f"reading page {page}, row {ri} 'time' wasn't read")                              
                     if i==6:
                         try:
                             d['country'] = td.text
                         except:
                             d['country'] = None 
-                            logger.debug(f"reading page {page}, row {_row} 'country' wasn't read")
+                            logger.debug(f"reading page {page}, row {ri} 'country' wasn't read")
                     if i==7:
                         try:
                             d['location'] = td.find_next().text
                         except:
                             d['location'] = None
-                            logger.debug(f"reading page {page}, row {_row} 'location' wasn't read")
+                            logger.debug(f"reading page {page}, row {ri} 'location' wasn't read")
                     if i==8:
                         try:
                             d['elev'] = td.text
                         except:
                             d['elev'] = None 
-                            logger.debug(f"reading page {page}, row {_row} 'elev' wasn't read")
+                            logger.debug(f"reading page {page}, row {ri} 'elev' wasn't read")
                     if i==9:
                         try:
                             d['type'] = td.text
                         except:
                             d['type'] = None
-                            logger.debug(f"reading page {page}, row {_row} 'type' wasn't read")
+                            logger.debug(f"reading page {page}, row {ri} 'type' wasn't read")
                             
                     if i==10:
                         try:
@@ -110,18 +110,18 @@ def read_table(table, page:int) -> List[Dict]:
                                     d['playback_used'] = t.split(':')[1]
                         except:
                             d['note'] = None 
-                            logger.debug(f"reading page {page}, row {_row} 'note' wasn't read")
+                            logger.debug(f"reading page {page}, row {ri} 'note' wasn't read")
                     if i==11:
                         try:
                             d['class'] = td.find(attrs={'class':'selected'}).find_next().text
                         except:
                             d['class'] = None
-                            logger.debug(f"reading page {page}, row {_row} 'class':'selected' wasn't read") 
+                            logger.debug(f"reading page {page}, row {ri} 'class':'selected' wasn't read") 
 
                 dicts.append(d)
     
             except Exception as e:
-                logger.error(f"reading page {page}, row {_row} error {traceback.format_exc()} {e}")
+                logger.error(f"reading page {page}, row {ri} error {traceback.format_exc()} {e}")
     
     return dicts
 

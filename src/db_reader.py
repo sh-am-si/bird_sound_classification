@@ -1,3 +1,4 @@
+from textwrap import indent
 from bs4 import BeautifulSoup 
 import urllib
 import requests
@@ -43,7 +44,6 @@ class Reader:
 
 
     def read(self):
-
         cursor = self.db.find({})
         for document in cursor:
             self.data.append(document)
@@ -55,9 +55,11 @@ class Reader:
         return df
 
     def save_json(self)-> None:
-        pass
+        json_string = json.dumps(self.data, default=str, indent=4)
+        with open(f'./data/json_data_{datetime.now().strftime("%Y-%m-%d_%H-%M")}.json', 'w') as outfile:
+            outfile.write(json_string)
 
-    
+
 
 if __name__ == '__main__':
 
